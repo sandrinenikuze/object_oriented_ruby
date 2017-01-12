@@ -2,10 +2,10 @@ class Electronics
 
   attr_reader :name, :color, :price 
   attr_writer :price
-  def initialize (name, color, price)
-    @name= name 
-    @color= color
-    @price= price
+  def initialize (electronic_hash)
+    @name= electronic_hash [:name]
+    @color= electronic_hash [:color]
+    @price= electronic_hash [:price]
   end
 
   # def name 
@@ -21,9 +21,9 @@ class Electronics
   #   @color
   # end 
   def info
-    "Here is the information about the electron #{@name} #{@color} #{@price}"
+    "Here is the information about the electron #{@color} #{@name} #{@price}"
 
   end 
 end
-electronic = Electronics.new("Telephone", "Red", 50000)
+electronic = Electronics.new({name: "Telephone", color: "Red", price: 50000})
 puts electronic.info 
