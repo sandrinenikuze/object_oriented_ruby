@@ -1,29 +1,13 @@
-class Electronics 
+require "./watch.rb"
+require "./laptop.rb"
+require "./telephone.rb"
+require "./explanation.rb"
+telephone = Telephone.new({name: "Techno", color: "Gold", price: 50000, type: "L8"})
+laptop = Laptop.new ({name: "HP", color: "Black", price: 500000, brand: "HP"})
+watch= Watch.new ({name: "Huinin", color: "Dark-black", price: 5000, size: "small"})
+puts telephone.name
+puts watch.size 
+telephone.type
 
-  attr_reader :name, :color, :price 
-  attr_writer :price
-  def initialize (electronic_hash)
-    @name= electronic_hash [:name]
-    @color= electronic_hash [:color]
-    @price= electronic_hash [:price]
-  end
 
-  # def name 
-  #   @name 
-  # end 
-  # def price 
-  #   @price 
-  # end
-  # def price= (price)
-  #   @price = price
-  # end 
-  # def color
-  #   @color
-  # end 
-  def info
-    "Here is the information about the electron #{@color} #{@name} #{@price}"
 
-  end 
-end
-electronic = Electronics.new({name: "Telephone", color: "Red", price: 50000})
-puts electronic.info 
