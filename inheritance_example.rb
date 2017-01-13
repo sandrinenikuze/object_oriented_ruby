@@ -1,4 +1,4 @@
-class Vehicle
+module Motion
   def initialize
     @speed = 0
     @direction = 'north'
@@ -15,21 +15,28 @@ class Vehicle
   def turn(new_direction)
     @direction = new_direction
   end
+
 end
 
-class Car < Vehicle
 
+
+
+class Car 
+  include Motion 
+  
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
-class Bike < Vehicle
-
+class Bike 
+  include Motion
   def ring_bell
     puts "Ring ring!"
   end
 end
 car = Car.new 
 bike = Bike.new 
-puts car.honk_horn
+puts bike.ring_bell 
+puts car.honk_horn 
+puts bike.brake
